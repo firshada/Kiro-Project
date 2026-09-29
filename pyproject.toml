@@ -1,0 +1,37 @@
+[project]
+name = "profiler"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "pydantic==2.13.5",
+    "fastapi==0.141.1",
+    "uvicorn==0.54.0",
+    "python-multipart==0.0.32",
+    "mcp==2.2.0",
+]
+
+[dependency-groups]
+dev = [
+    "ruff==0.13.2",
+    "pytest==8.4.2",
+    "pytest-cov==7.1.0",
+    "hypothesis==6.140.2",
+    "mypy==1.18.2",
+    "httpx==0.28.1",
+]
+
+[tool.uv]
+package = false
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "."]
+markers = ["slow: long-running tests (e.g. large files)"]
+addopts = "--cov=profiler.core --cov-report=term-missing:skip-covered --cov-fail-under=90"

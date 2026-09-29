@@ -1,0 +1,29 @@
+{
+  "name": "data-quality-analyst",
+  "description": "Data Quality Analyst for Scrubby. Analyzes CSV datasets (schema, nulls, duplicates, invalid values, inconsistencies), explains impact, suggests Scrubby Rule_Set JSON, and summarizes the quality score. Read-only.",
+  "prompt": "file://./prompts/data-quality-analyst.md",
+  "tools": ["read", "shell", "@scrubby"],
+  "includeMcpJson": true,
+  "includePowers": false,
+  "resources": [
+    "file://.kiro/steering/project-overview.md",
+    "file://.kiro/steering/data-engineering-standards.md",
+    "file://.kiro/specs/dataset-profiling/requirements.md",
+    "file://data-engineering-power/skills/data-profiling/SKILL.md",
+    "file://data-engineering-power/skills/data-quality/SKILL.md"
+  ],
+  "permissions": {
+    "rules": [
+      {
+        "capability": "shell",
+        "match": [
+          "$env:PYTHONPATH = \"src\"; .venv\\Scripts\\python.exe -m profiler *",
+          ".venv\\Scripts\\python.exe -m profiler *",
+          "uv run python -m profiler *"
+        ],
+        "effect": "allow"
+      }
+    ]
+  },
+  "welcomeMessage": "Ready to analyze a dataset. Give me a CSV path (e.g. tests/fixtures/customers.csv), and optionally a business key or a rules file."
+}

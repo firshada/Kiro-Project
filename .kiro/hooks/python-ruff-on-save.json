@@ -1,0 +1,16 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Ruff format + check on Python save",
+      "trigger": "PostFileSave",
+      "description": "Runs ruff format then ruff check --fix when a .py file is saved.",
+      "matcher": "\\.py$",
+      "action": {
+        "type": "command",
+        "command": ".venv\\Scripts\\python.exe scripts\\hooks\\ruff_on_save.py",
+        "timeout": 60
+      }
+    }
+  ]
+}

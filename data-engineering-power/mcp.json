@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "scrubby": {
+      "type": "stdio",
+      "command": "uv",
+      "args": ["run", "python", "-m", "profiler.adapters.mcp_server", "--root", "."],
+      "env": { "PYTHONPATH": "src" }
+    }
+  }
+}

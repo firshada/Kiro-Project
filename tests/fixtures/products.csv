@@ -1,0 +1,5 @@
+sku,name,price,in_stock
+P-100,Widget,9.99,true
+P-101,Gadget,24.50,false
+P-102,Gizmo,,true
+P-103,"Thing ""Pro""",100,TRUE

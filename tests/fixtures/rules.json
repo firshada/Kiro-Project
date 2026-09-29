@@ -1,0 +1,9 @@
+{
+  "business_key": ["customer_id"],
+  "columns": [
+    {"column": "customer_id", "rules": ["not_null", "unique", {"name": "in_range", "min": 10000, "max": 19999}]},
+    {"column": "email", "rules": ["not_null", "valid_email"]},
+    {"column": "active", "rules": [{"name": "type_is", "type": "boolean"}]},
+    {"column": "signup_date", "rules": [{"name": "type_is", "type": "datetime"}]}
+  ]
+}

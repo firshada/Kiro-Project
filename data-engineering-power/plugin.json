@@ -1,0 +1,19 @@
+{
+  "name": "data-engineering-power",
+  "version": "1.0.0",
+  "description": "Profile CSV datasets, detect nulls and duplicates, score data quality, suggest validation rules, and review SQL, using the Scrubby MCP server.",
+  "author": { "name": "Scrubby" },
+  "keywords": [
+    "profile",
+    "profiling",
+    "dataset",
+    "csv",
+    "nulls",
+    "duplicates",
+    "data quality",
+    "quality rules",
+    "quality score",
+    "sql review"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Run pytest after spec task completes",
+      "trigger": "PostTaskExec",
+      "description": "Runs pytest when a spec task is marked completed.",
+      "action": {
+        "type": "command",
+        "command": ".venv\\Scripts\\python.exe -m pytest -q --tb=short",
+        "timeout": 300
+      }
+    }
+  ]
+}
